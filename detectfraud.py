@@ -13,7 +13,6 @@ import numpy as np
 import time
 user_data_file = "login_data.csv"
 feedback_file = "feedback.csv"
-#genai.configure(api_key='AIzaSyDGMkXv8Qqh9Bwf2Xs_M6j1UNTSFJC9wBw')  # Replace with your actual API key
 # Ensure necessary files exist
 def ensure_user_data():
     if not os.path.exists(user_data_file):
@@ -228,7 +227,7 @@ if st.session_state.logged_in:
         st.experimental_rerun() # Reset the flag
 
     # Loading the saved model
-    loaded_model = pickle.load(open(r"C:\Users\HP\Downloads\DL_Project\final_model.sav", 'rb'))
+    loaded_model = pickle.load(open("final_model.sav", 'rb'))
 
     # Creating a function for Prediction
     @st.cache(persist=True)
